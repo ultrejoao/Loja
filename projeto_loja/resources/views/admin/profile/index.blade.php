@@ -12,10 +12,8 @@
     <div class="section-body">
 
       <div class="row mt-sm-4">
+        {{-- INICIO BLOCO 1 --}}
         <div class="col-12 col-md-12 col-lg-7">
-            @if (session('success'))
-                <div class="alert alert-success">{{ session('success') }}</div>
-            @endif
           <div class="card">
             <form action="{{ route('admin.profile.update') }}" method="post" class="needs-validation" novalidate="" enctype="multipart/form-data">
             @csrf
@@ -57,6 +55,43 @@
             </form>
           </div>
         </div>
+        {{-- FIM BLOCO 1 --}}
+
+        {{-- INICIO BLOCO 2 --}}
+        <div class="col-12 col-md-12 col-lg-7">
+          <div class="card">
+            <form action="{{ route('admin.profile.password') }}" method="post" class="needs-validation" novalidate="" enctype="multipart/form-data">
+            @csrf
+                <div class="card-header">
+                <h4>Atualizar Senha</h4>
+              </div>
+              <div class="card-body">
+                  <div class="row">
+
+                    <div class="form-group col-12">
+                      <label>Senha Atual</label>
+                      <input type="password" class="form-control" name="current_password" placeholder="Digite sua senha atual">
+                    </div>
+
+                    <div class="form-group col-12">
+                      <label>Nova Senha</label>
+                      <input type="password" class="form-control" name="password" placeholder="Digite uma nova senha">
+                    </div>
+
+                    <div class="form-group col-12">
+                      <label>Confirme sua senha</label>
+                      <input type="password" class="form-control" name="password_confirmation" placeholder="Comfirme sua senha">
+                    </div>
+                  </div>
+              </div>
+              <div class="card-footer text-right">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        {{-- FIM BLOCO 2 --}}
+
       </div>
     </div>
   </section>
